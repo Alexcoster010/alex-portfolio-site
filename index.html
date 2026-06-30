@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Coster | Mechanical Engineering Portfolio</title>
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+      background-color: #0b0d17;
+      color: #e1e8f0;
+      line-height: 1.6;
+    }
+    a {
+      color: #d4222a; /* OU crimson accent */
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #f04f54;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+    }
+    p {
+      margin: 0 0 1rem;
+    }
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(11, 13, 23, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .links a {
+      margin-left: 1rem;
+      font-weight: 600;
+      color: #a3b3c9;
+    }
+    nav .links a:hover {
+      color: #fff;
+    }
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      gap: 2rem;
+    }
+    .hero-text {
+      flex: 1 1 60%;
+    }
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: #fff;
+    }
+    .hero-text p {
+      color: #a3b3c9;
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+    .hero-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-primary {
+      background-color: #d4222a;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background-color: #f04f54;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid #d4222a;
+      color: #d4222a;
+    }
+    .btn-secondary:hover {
+      background-color: #d4222a;
+      color: #fff;
+    }
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .section-description {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #a3b3c9;
+    }
+    /* Projects grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    /* Image styling inside project cards */
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+    .project-card {
+      background-color: #13182c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+    .project-meta {
+      color: #d4222a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .project-card h3 {
+      color: #fff;
+      margin: 0 0 0.75rem;
+    }
+    .project-card p {
+      color: #a3b3c9;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .project-card ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+      color: #a3b3c9;
+    }
+    .project-card ul li {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+    /* Skills section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .skill-card {
+      background-color: #13182c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #a3b3c9;
+    }
+    .skill-card h3 {
+      color: #d4222a;
+      margin-bottom: 0.5rem;
+    }
+    /* Contact section */
+    .contact-container {
+      background-color: #13182c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .contact-container p {
+      color: #a3b3c9;
+      margin-bottom: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #a3b3c9;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 3rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <strong>Alex Coster</strong>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Engineering for Performance and Precision</h1>
+      <p>
+        I am a mechanical engineer with a passion for motorsports, robotics, automation and manufacturing. As the chassis lead for the Sooner Racing Team and a graduate researcher in mechanical engineering, I blend theory with hands‑on development — from race cars and robotic cells to advanced manufacturing systems and AI‑powered tools.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="mailto:acoster00@gmail.com" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-graphic">
+      <!-- Optionally add an illustration or image here -->
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="section-description">
+      With experience spanning motorsports engineering, robotic automation and manufacturing research, I thrive on projects that demand creativity, analysis and practical execution. I have led the design of Formula SAE chassis and suspension systems, built robotic cells for CNC automation, and developed advanced hardware for additive manufacturing and heat treatment. My objective is to create solutions that push performance boundaries while remaining manufacturable and reliable.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="images/image1.jpeg" alt="Lathe automation cell with xArm6 robot and Tormach 8L CNC lathe">
+        <div class="project-meta">Summer 2025</div>
+        <h3>Lathe Automation Cell</h3>
+        <p>
+          Integrated an xArm6 robotic arm with a Tormach 8L CNC lathe to automate machining of Ti‑6Al‑4V tensile and fatigue samples. The cell reduces manual machine time and increases repeatability.
+        </p>
+        <ul>
+          <li>Robot motion planning and control integration</li>
+          <li>Pneumatic door, collet and tailstock actuation</li>
+          <li>Safe sequencing and handoff logic for machining operations</li>
+        </ul>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="images/image2.png" alt="Formula SAE tube‑frame vehicle CAD model with suspension and wheels">
+        <div class="project-meta">Fall 2025</div>
+        <h3>Formula SAE Frame & Suspension</h3>
+        <p>
+          Designed the Sooner Racing Team vehicle chassis and suspension system to balance stiffness, weight, manufacturability and rule compliance while delivering the desired kinematic performance.
+        </p>
+        <ul>
+          <li>Full tube‑frame CAD and packaging layout</li>
+          <li>Suspension hardpoint optimization and roll center analysis</li>
+          <li>Integration with steering, drivetrain and aero subsystems</li>
+        </ul>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="images/image3.png" alt="3D‑printed modular frame fixture for race car chassis assembly">
+        <div class="project-meta">Fall 2025</div>
+        <h3>Modular Frame Fixture</h3>
+        <p>
+          Developed a modular 3D‑printed fixturing system for accurate welding and repeatable assembly of the race car chassis, improving build precision and reducing fabrication time.
+        </p>
+        <ul>
+          <li>CAD‑based layout with references to the welding table</li>
+          <li>ABS‑GF printed components for heat resistance and rigidity</li>
+          <li>Improved tack‑up accuracy and consistency during welding</li>
+        </ul>
+      </div>
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="images/image6.jpeg" alt="Formula SAE chassis assembly on jig table">
+        <div class="project-meta">2025</div>
+        <h3>Formula SAE Vehicle Development</h3>
+        <p>
+          Led the design and build of the team’s race car, including full‑vehicle CAD, suspension kinematics in MATLAB/Simscape and performance optimization through testing and data analysis.
+        </p>
+        <ul>
+          <li>Wheel rate, motion ratio and ride frequency tuning</li>
+          <li>Carbon fibre suspension design and FEA validation</li>
+          <li>Integration of aero, powertrain and electronics systems</li>
+        </ul>
+      </div>
+      <!-- Project 5 -->
+      <div class="project-card">
+        <div class="project-meta">2025</div>
+        <h3>Vacuum Furnace Development</h3>
+        <p>
+          Designed a vacuum heat treatment furnace for titanium parts, including the pressure vessel, vacuum system and argon backfill strategy to achieve low oxygen levels and consistent material properties.
+        </p>
+        <ul>
+          <li>ANSYS pressure analysis of the furnace chamber</li>
+          <li>Argon purge system and vacuum sealing strategy</li>
+          <li>Control and monitoring of heat treat cycles</li>
+        </ul>
+      </div>
+      <!-- Project 6 -->
+      <div class="project-card">
+        <div class="project-meta">2024 – 2025</div>
+        <h3>Powder Bed Printer</h3>
+        <p>
+          Developed a custom powder bed fusion printer for ceramic materials, including mechanical design, motion control, powder delivery, and laser integration for selective sintering.
+        </p>
+        <ul>
+          <li>Klipper firmware and laser control integration</li>
+          <li>Cylindrical piston build platform and O‑ring seals</li>
+          <li>Custom macros for powder spreading and layer registration</li>
+        </ul>
+      </div>
+    </div>
+  <
+    
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Design & Analysis</h3>
+        <p>CAD (SolidWorks), suspension geometry, tube‑frame design, motion ratio tuning, finite element analysis (ANSYS), vehicle dynamics simulation.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Manufacturing</h3>
+        <p>CNC machining, additive manufacturing, welding fixture design, vacuum heat treatment, composite fabrication, fixture and tooling design.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Automation & Controls</h3>
+        <p>Robotic integration (xArm6), CNC machine interfacing, pneumatic systems, ROS2/MoveIt, Python scripting for automation, MoTeC ECU calibration.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Software & Data</h3>
+        <p>Python, MATLAB/Simulink, Simscape, Markov modelling, data acquisition and analysis, GitHub, GitLab, Linux.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-container">
+      <p>Feel free to reach out if you're interested in discussing engineering projects, collaboration opportunities or just want to connect.</p>
+      <a href="mailto:acoster00@gmail.com" class="btn btn-primary">Email Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Alex Coster. All rights reserved.
+  </footer>
+</body>
+</html>/
+
