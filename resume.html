@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alexander Coster — Resume</title>
+<style>
+  @page { size: Letter; margin: 0.42in 0.5in; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    font-size: 10pt;
+    line-height: 1.24;
+  }
+  a { color: #111; text-decoration: none; }
+
+  header { text-align: center; margin-bottom: 8px; }
+  h1 { font-size: 21pt; letter-spacing: 0.5px; margin: 0 0 3px; }
+  .contact { font-size: 9pt; color: #333; }
+  .contact span { white-space: nowrap; }
+  .sep { color: #999; margin: 0 5px; }
+
+  h2 {
+    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1px;
+    border-bottom: 1.2px solid #111; padding-bottom: 2px; margin: 8px 0 4px;
+  }
+
+  .summary { margin: 0; text-align: justify; }
+
+  .edu-row, .job-head { display: flex; justify-content: space-between; gap: 12px; }
+  .edu-row { margin-bottom: 2px; }
+  .org { font-weight: bold; }
+  .when { color: #333; white-space: nowrap; font-size: 9.5pt; }
+  .role { font-style: italic; }
+
+  .entry { margin-bottom: 5px; }
+  .job-head { align-items: baseline; }
+  ul { margin: 1px 0 0; padding-left: 16px; }
+  li { margin-bottom: 1px; }
+
+  .skills p { margin: 0 0 2.5px; }
+  .skills b { display: inline-block; min-width: 150px; }
+
+  .proj-line b { font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>ALEXANDER COSTER</h1>
+    <div class="contact">
+      <span>Norman, OK</span><span class="sep">|</span>
+      <span>acoster00@gmail.com</span><span class="sep">|</span>
+      <span>469-427-6711</span><span class="sep">|</span>
+      <span>linkedin.com/in/alex-coster-51649a320</span><span class="sep">|</span>
+      <span>github.com/Alexcoster010</span>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Mechanical engineer and M.S. candidate experienced in vehicle dynamics, robotics integration, CNC automation, and
+    additive manufacturing. Skilled in SolidWorks CAD, finite element analysis (ANSYS), MATLAB/Simulink/Simscape, and
+    Python, with strengths in design-for-manufacturing (DFM, GD&amp;T), electromechanical integration, and data analysis —
+    taking systems from concept through prototyping, testing, and validation.
+  </p>
+
+  <h2>Education</h2>
+  <div class="edu-row">
+    <span><span class="org">University of Oklahoma</span> — M.S., Mechanical Engineering</span>
+    <span class="when">Expected May 2027&nbsp;&nbsp;|&nbsp;&nbsp;GPA 4.0</span>
+  </div>
+  <div class="edu-row">
+    <span><span class="org">University of Oklahoma</span> — B.S., Mechanical Engineering</span>
+    <span class="when">May 2026&nbsp;&nbsp;|&nbsp;&nbsp;GPA 3.41</span>
+  </div>
+
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <div class="job-head">
+      <span><span class="org">Sooner Advanced Manufacturing Lab</span> — <span class="role">Research Engineer</span></span>
+      <span class="when">Mar 2025 – Aug 2025</span>
+    </div>
+    <ul>
+      <li>Designed and built a robotic lathe automation cell: integrated an xArm6 robotic arm and pneumatics with a Tormach 8L CNC lathe for fully automated machining of titanium (Ti-6Al-4V) additive samples.</li>
+      <li>Developed motion sequencing, pneumatic actuation, and safe robot-to-machine handoff logic, reducing manual machine-tending and improving part-to-part repeatability.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="job-head">
+      <span><span class="org">Undergraduate Research Assistant</span> — AME Machine Shop, Univ. of Oklahoma</span>
+      <span class="when">Jun 2023 – Mar 2025, Sep 2025 – Present</span>
+    </div>
+    <ul>
+      <li>Designed and built research apparatus and tooling for faculty and student projects, consulting on design-for-manufacturing.</li>
+      <li>Manufactured components on CNC mills and manual equipment, holding tolerances using GD&amp;T and CAM (HSMWorks).</li>
+      <li>Provided SolidWorks CAD design support across multiple research groups.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="job-head">
+      <span><span class="org">FSAE Sooner Racing Team</span> — Mechanical Engineer</span>
+      <span class="when">Aug 2022 – Present</span>
+    </div>
+    <ul>
+      <li>Design and manufacturing of the frame, suspension, brakes, and ergonomics for the Formula SAE race car.</li>
+      <li>Built a full-vehicle SolidWorks CAD model and a Simscape Multibody vehicle-dynamics model in MATLAB to analyze suspension kinematics and validate the vehicle design.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="job-head">
+      <span><span class="org">FSAE Sooner Racing Team</span> — <span class="role">Chassis Lead</span></span>
+      <span class="when">May 2023 – May 2024</span>
+    </div>
+    <ul>
+      <li>Led the chassis subsystem (frame, suspension, brakes, ergonomics, and safety) through design and manufacturing.</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="entry">
+    <div class="job-head">
+      <span class="proj-line"><b>Unitree G1 Humanoid Robot</b> — robotics rebuild &amp; AI integration</span>
+      <span class="when">Summer 2026</span>
+    </div>
+    <ul>
+      <li>Rebuilt and recalibrated a Unitree G1 humanoid (per-joint calibration, actuator tuning, restored balance and locomotion) and integrated the OpenAI API for real-time conversational interaction.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="job-head">
+      <span class="proj-line"><b>VN-300 IMU Data &amp; Analysis Tools</b> — vehicle-dynamics software</span>
+      <span class="when">2026 – Present</span>
+    </div>
+    <ul>
+      <li>Building a Python data-acquisition and analysis suite for the VectorNav VN-300 GNSS/INS to log and process vehicle-dynamics data (speed, lateral/longitudinal acceleration, GPS timing) that informs suspension and handling design.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="job-head">
+      <span class="proj-line"><b>Ceramic Powder-Bed Fusion Printer</b> — additive manufacturing R&amp;D</span>
+      <span class="when">2024 – 2025</span>
+    </div>
+    <ul>
+      <li>Developed a custom powder-bed fusion printer: mechanical design, motion control (Klipper firmware), powder delivery, and laser integration for selective sintering.</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><b>CAD &amp; Design:</b> SolidWorks, GD&amp;T, DFM, tolerance analysis, tube-frame design, prototyping</p>
+    <p><b>Analysis &amp; Simulation:</b> ANSYS (FEA), MATLAB, Simulink, Simscape Multibody, vehicle dynamics</p>
+    <p><b>Manufacturing:</b> CNC machining, CAM (HSMWorks), additive manufacturing, TIG/MIG welding, fixture &amp; tooling design</p>
+    <p><b>Robotics &amp; Controls:</b> robotic integration (xArm6, Unitree G1), ROS2/MoveIt, motion control, pneumatics, IMU/GNSS sensor integration</p>
+    <p><b>Programming &amp; Tools:</b> Python, C++, Java, OpenAI API, Git/GitHub, GitLab, Linux</p>
+  </div>
+
+</body>
+</html>
